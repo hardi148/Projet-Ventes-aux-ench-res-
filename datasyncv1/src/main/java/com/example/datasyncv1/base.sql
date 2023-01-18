@@ -1,3 +1,7 @@
+\c postgres
+drop database enchere;
+create database enchere;
+\c enchere
 
 create sequence sqtokenadmin;
 create sequence sqtokenuser;
@@ -129,7 +133,7 @@ role varchar(10)
 
 --statistiques-----
 
-view 1 : nombre de membres par jour , mois , annee
+--view 1 : nombre de membres par jour , mois , annee
 
 
 
@@ -137,13 +141,13 @@ select count(idUtilisateur) as nombre , extract(year from DateInscription) as an
 
 
 
-view 2 : nombre total enchere par jour , mois , annee
+--view 2 : nombre total enchere par jour , mois , annee
 
 
 select count(idEnchere) as nombre , extract(year from DateHeureEnchere) as annee , extract(month from DateHeureEnchere) as mois , to_char(DateHeureEnchere,'Mon') from enchere group by extract(year from DateHeureEnchere) , extract(month from DateHeureEnchere),to_char(DateHeureEnchere,'Mon');
 
 
-view 3 : nombre de catégorie  produits vendus par catégories
+--view 3 : nombre de catégorie  produits vendus par catégories
 
 create or replace view categorieProduitVendu as  
 WITH all_categories AS (SELECT idCategorieProduit FROM CategorieProduit)
@@ -163,7 +167,7 @@ GROUP BY cp2.idCategorieProduit,cp2.typeCategorie order by COUNT(re.idEnchere) d
 
 
 
-view 6 : nombre de vente  des produits par client
+--view 6 : nombre de vente  des produits par client
 
 
 create or replace view StatClient as
@@ -186,7 +190,7 @@ select p.idProduit , p.nomProduit , p.description , p.prix , p.numero_serie , p.
 
 create or replace view v_total_membre as
 select count(idUtilisateur) as nombre , extract(year from DateInscription) as annee , extract(month from DateInscription) as mois, extract(day from DateInscription) as jour from Utilisateur group by
-extract(year from DateInscription) , extract(month from DateInscription) , extract(day from DateInscription)
+extract(year from DateInscription) , extract(month from DateInscription) , extract(day from DateInscription);
 
 
 INSERT INTO Utilisateur (nom, prenom, email, mdp) VALUES ('John', 'Doe', 'john.doe@example.com', 'password123');
@@ -200,7 +204,13 @@ WITH months(month, year) AS (SELECT generate_series(1, 12), extract(year from cu
 
 
 --Chiffre d'affaire de l'application----
-select sum(montant) from PrelevementEnchere; 
+select sum(montant) from PrelevementEnchere;
+
+
+INSERT INTO Enchere (idUtilisateur, description, prixMinimumVente,durreEnchere)
+VALUES (1, 'Enchere pour un iPhone', 700,30);
+INSERT INTO Enchere (idUtilisateur, description, prixMinimumVente,durreEnchere)
+VALUES (2, 'Enchere pour une chemise',300,40);
 
 
 INSERT INTO HistoriqueOffre (idEnchere, idUtilisateur, montant_offre) VALUES (1, 1, 750);
@@ -220,10 +230,7 @@ select u.idutilisateur , u.nom , u.prenom , e.description , e.prixminimumvente ,
 ---vendeur--
 
 
-INSERT INTO Enchere (idUtilisateur, description, prixMinimumVente,durreEnchere) 
-VALUES (1, 'Enchere pour un iPhone', 700,30);
-INSERT INTO Enchere (idUtilisateur, description, prixMinimumVente,durreEnchere)  
-VALUES (2, 'Enchere pour une chemise',300,40);
+
 
 
 INSERT INTO ResultatEnchere (idEnchere, idUtilisateur, prix_gagnant) VALUES (1, 1, 800);
