@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package objectBdd;
+package com.example.datasyncv1.ObjectBdd;
 
 /**
  *
@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import com.example.datasyncv1.ObjectBdd.ManipDb;
 
 public class Mere {/* the models that all classes will inherits */
 

@@ -2,7 +2,7 @@ package com.example.datasyncv1.models;
 
 import java.sql.Date;
 
-public class PrelevementEnchere extends objectBdd.Mere{
+public class PrelevementEnchere extends com.example.datasyncv1.ObjectBdd.Mere{
     private int idEnchere;
     private float montant;
     private Date DatePrelevement;

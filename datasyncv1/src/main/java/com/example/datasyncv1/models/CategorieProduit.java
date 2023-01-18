@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CategorieProduit extends objectBdd.Mere {
+public class CategorieProduit extends com.example.datasyncv1.ObjectBdd.Mere {
 
     public Integer IdCategorieProduit;
     public String typeCategorie;

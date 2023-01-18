@@ -1,6 +1,6 @@
 package com.example.datasyncv1.models;
 
-public class Enchere extends objectBdd.Mere {
+public class Enchere extends com.example.datasyncv1.ObjectBdd.Mere {
 
     private int idUtilisateur;
     private  String description;

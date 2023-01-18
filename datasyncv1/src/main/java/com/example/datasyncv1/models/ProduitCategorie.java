@@ -3,7 +3,7 @@ package com.example.datasyncv1.models;
 import java.sql.Date;
 
 
-public class ProduitCategorie extends objectBdd.Mere{
+public class ProduitCategorie extends com.example.datasyncv1.ObjectBdd.Mere{
 
     public Integer IdProduit;
 

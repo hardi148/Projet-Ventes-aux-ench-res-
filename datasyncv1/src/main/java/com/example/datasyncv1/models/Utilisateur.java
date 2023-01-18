@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 
-public class Utilisateur extends objectBdd.Mere {
+public class Utilisateur extends com.example.datasyncv1.ObjectBdd.Mere {
 
     private Integer Id;
     private String nom;
