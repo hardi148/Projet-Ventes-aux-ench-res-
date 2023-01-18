@@ -23,7 +23,7 @@ public class UtilisateurRestController {
     Connection con;
     {
         try {
-            con = objectBdd.ManipDb.pgConnect("postgres","cloudfinal","hardi");
+            con = com.example.datasyncv1.ObjectBdd.ManipDb.pgConnect("postgres","enchere","hasinjaka");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

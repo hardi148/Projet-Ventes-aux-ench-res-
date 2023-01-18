@@ -21,7 +21,7 @@ public class AdministrateurController {
 
     Connexion con;
 
-    Connection con1 = objectBdd.ManipDb.pgConnect("postgres","cloudfinal","hardi");
+    Connection con1 = com.example.datasyncv1.ObjectBdd.ManipDb.pgConnect("postgres","enchere","hasinjaka");
 
     PrelevementEnchereDao p = new PrelevementEnchereDao();
     AdminDao a = new AdminDao();

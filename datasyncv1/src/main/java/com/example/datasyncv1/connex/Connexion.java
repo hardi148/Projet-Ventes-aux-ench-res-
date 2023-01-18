@@ -12,7 +12,7 @@ public class Connexion
         try
         {
             Class.forName("org.postgresql.Driver");
-            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/cloudfinal", "postgres", "hardi");
+            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/enchere", "postgres", "hasinjaka");
             this.stat= this.con.createStatement();
 //  			this.res=stat.executeQuery(req);
             stat.execute(req);
@@ -31,7 +31,7 @@ public class Connexion
     {
         try {
             Class.forName("org.postgresql.Driver");
-            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/cloudfinal", "postgres", "hardi");
+            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/enchere", "postgres", "hasinjaka");
         } catch (Exception e) {
         } finally {
         }
@@ -43,7 +43,7 @@ public class Connexion
         try
         {
             Class.forName("org.postgresql.Driver");
-            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/cloudfinal", "postgres", "hardi");
+            this.con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/enchere", "postgres", "hasinjaka");
             this.stat= this.con.createStatement();
             this.res=stat.executeQuery(req);
             //	stat.execute(req);
